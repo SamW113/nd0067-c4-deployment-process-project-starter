@@ -28,8 +28,11 @@ jobs:
       - run:
           name: Install API Dependencies
           command: |
-            cd udagram/udagram-api
-            npm install
+            echo "NODE --version" 
+            echo $(node --version)
+            echo "NPM --version" 
+            echo $(npm --version)
+            npm run api:install
       # Lint the frontend
       - run:
           name: Front-End Lint
