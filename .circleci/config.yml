@@ -26,10 +26,10 @@ jobs:
             npm run frontend:install
       # Install dependencies in the backend API
       - run:
-        name: Install API Dependencies
-        command: |
-          cd udagram/udagram-api
-          npm install
+          name: Install API Dependencies
+          command: |
+            cd udagram/udagram-api
+            npm install
       # Lint the frontend
       - run:
           name: Front-End Lint
