@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Front-End Lint
           command: |
-            npm run frontend:lint || echo "Linting failed, please check the errors."
+            npm run frontend:lint
       - run:
           name: Front-End Build
           command: |
@@ -35,8 +35,7 @@ jobs:
       - run:
           name: API Build
           command: |
-            cd udagram/udagram-api
-            npm run build
+            npm run api:build
   deploy:
     docker:
       - image: "cimg/base:stable"
