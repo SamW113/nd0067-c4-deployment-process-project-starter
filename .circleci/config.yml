@@ -36,7 +36,7 @@ jobs:
           name: API Build
           command: |
             cd udagram/udagram-api
-            npm run build || echo "API build failed, please check the errors."
+            npm run build
   deploy:
     docker:
       - image: "cimg/base:stable"
