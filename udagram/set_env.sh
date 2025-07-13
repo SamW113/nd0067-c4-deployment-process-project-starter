@@ -6,6 +6,6 @@ export POSTGRES_HOST=projectdatabase-1.cuzzpxgtribp.us-east-1.rds.amazonaws.com
 export POSTGRES_DB=postgres
 export AWS_BUCKET=arn:aws:s3:::myprojectmcbucket
 export AWS_REGION=us-east-1
-export AWS_PROFILE=default
+export AWS_PROFILE=eb-cli
 export JWT_SECRET=mysecretstring
 export URL=http://localhost:8100
