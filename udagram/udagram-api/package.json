@@ -14,7 +14,7 @@
     "clean": "rm -rf www/ || true",
     "deploy": "npm run build && eb list && eb use udagram-api-dev && eb deploy",
     "buildone": "npm install . && npm run clean && tsc && cp -rf src/config www/config",
-    "buildtwo": "cp -rp /c/Users/wrigh/Documents/nd0067-c4-deployment-process-project-starter/udagram/udagram-api/.elasticbeanstalk www/.elasticbeanstalk",
+    "buildtwo": "eb init && cp -rp /c/Users/wrigh/Documents/nd0067-c4-deployment-process-project-starter/udagram/udagram-api/.elasticbeanstalk www/.elasticbeanstalk",
     "buildthree": "cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specifi\" && exit 1"
   },
