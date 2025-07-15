@@ -54,10 +54,9 @@ jobs:
       - aws-cli/setup
       - checkout
       - run:
-          name: Deploy App
-          # Install, build, deploy in both apps
-          command: |
-            eb setenv AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+        name: Set Environment Variables
+        command: |
+          eb setenv AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
             eb setenv AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
             eb setenv AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
             eb setenv AWS_BUCKET=$AWS_BUCKET
@@ -69,6 +68,10 @@ jobs:
             eb setenv POSTGRES_HOST=$POSTGRES_HOST
             eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
             eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
+      - run:
+          name: Deploy App
+          # Install, build, deploy in both apps
+          command: |
             npm run deploy
 
 workflows:
