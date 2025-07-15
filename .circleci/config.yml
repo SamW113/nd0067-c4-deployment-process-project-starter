@@ -56,7 +56,7 @@ jobs:
       - run:
           name: Create Elastic Beanstalk Environment
           command: |
-            eb create --single --keyname mykeypair --instance-types t2.medium
+            eb create --single --keyname vockey --instance-types t2.medium
       - run:
           name: Set Environment Variables
           command: |
