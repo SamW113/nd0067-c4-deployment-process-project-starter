@@ -57,7 +57,7 @@ jobs:
       - run:
           name: Deploy App
           command: |
-            eb init -p "Node.js 14 running on 64bit Amazon Linux 2" udagram-api --region us-east-1
+            eb init udagram-api --region us-east-1
             eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
             npm run deploy
 
