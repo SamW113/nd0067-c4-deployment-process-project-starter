@@ -61,8 +61,8 @@ jobs:
       - run:
           name: Set Environment Variables
           command: |
-            eb create AWS_ACCESS_KEY_ID
-            eb setenv AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+            eb create AWS_REGION
+            eb setenv AWS_REGION=$AWS_REGION
       - run:
           name: Deploy App
           command: |
