@@ -16,10 +16,6 @@ jobs:
       - node/install:
           node-version: '14.15'
       - run:
-          name: Set environment Variables
-          command: |
-            eb setenv JWT_SECRET=$(echo $JWT_SECRET)
-      - run:
           name: Install Front-End Dependencies
           command: |
             echo "NODE --version"
@@ -61,6 +57,7 @@ jobs:
       - run:
           name: Deploy App
           command: |
+            eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
             npm run deploy
 
 workflows:
