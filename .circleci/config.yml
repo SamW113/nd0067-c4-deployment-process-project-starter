@@ -50,6 +50,8 @@ jobs:
     steps:
       - node/install:
           node-version: '14.15'
+      - eb/setup
+      - aws-cli/setup
       - checkout
       - run:
           name: Configure AWS Credentials
@@ -62,9 +64,7 @@ jobs:
       - run:
           name: Initialize EB CLI
           command: |
-            eb init -p node.js --region $AWS_DEFAULT_REGION --application your-default-app-name
-      - eb/setup
-      - aws-cli/setup
+            eb init -p node.js --region $AWS_DEFAULT_REGION --application udagram-api-dev
       - run:
           name: Deploy App
           command: |
