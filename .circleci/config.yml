@@ -55,14 +55,6 @@ jobs:
       - aws-cli/setup
       - checkout
       - run:
-          name: Initialize EB CLI
-          command: |
-            eb init -p node.js --region $AWS_DEFAULT_REGION
-      - run:
-          name: Set Environment Variables
-          command: |
-            eb setenv JWT_SECRET=$JWT_SECRET
-      - run:
           name: Deploy App
           command: |
             npm run deploy
