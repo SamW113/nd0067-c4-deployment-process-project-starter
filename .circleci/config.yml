@@ -61,7 +61,7 @@ jobs:
       - run:
           name: Set Environment Variables
           command: |
-            eb setenv AWS_REGION=$AWS_REGION
+            eb setenv JWT_SECRET=$JWT_SECRET
       - run:
           name: Deploy App
           command: |
