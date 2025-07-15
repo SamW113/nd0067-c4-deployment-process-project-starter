@@ -54,18 +54,6 @@ jobs:
       - aws-cli/setup
       - checkout
       - run:
-          name: Configure AWS Credentials
-          command: |
-            mkdir -p ~/.aws
-            echo "[default]" > ~/.aws/config
-            echo "aws_access_key_id = $AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
-            echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
-            echo "region = $AWS_DEFAULT_REGION" >> ~/.aws/config
-      - run:
-          name: Initialize EB CLI
-          command: |
-            eb init -p node.js --region $AWS_DEFAULT_REGION
-      - run:
           name: Deploy App
           command: |
             npm run deploy
