@@ -64,7 +64,7 @@ jobs:
       - run:
           name: Initialize EB CLI
           command: |
-            eb init -p node.js --region $AWS_DEFAULT_REGION --application udagram-api-dev
+            eb init -p node.js --region $AWS_DEFAULT_REGION
       - run:
           name: Deploy App
           command: |
