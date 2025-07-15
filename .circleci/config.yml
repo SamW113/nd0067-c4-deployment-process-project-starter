@@ -57,7 +57,7 @@ jobs:
       - run:
           name: Deploy App
           command: |
-            eb init udagram-api --region us-east-1
+            eb init -p node.js --region $AWS_DEFAULT_REGION
             eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
             npm run deploy
 
