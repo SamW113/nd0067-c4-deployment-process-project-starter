@@ -54,6 +54,10 @@ jobs:
       - aws-cli/setup
       - checkout
       - run:
+          name: Create Elastic Beanstalk Environment
+          command: |
+            eb create --single --keyname mykeypair --instance-types t2.medium
+      - run:
           name: Set Environment Variables
           command: |
             eb setenv AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
